@@ -36,6 +36,8 @@ vmap <C-r> <Plug>RDSendSelection
 nmap <C-r> <Plug>RDSendLine
 let R_assign = 0
 let R_complete = 2
+let R_args = ['--no-save', '--quiet', '--vanilla']
+let R_pdfviewer = 'evince'
 
 " Tab for double space
 filetype plugin indent on
@@ -48,4 +50,7 @@ set softtabstop=2
 set shiftwidth=2
 
 "copy/paste across multiple sessions
-set clipboard=unnamed
+set clipboard=unnamedplus
+
+"use mouse
+set mouse=a
