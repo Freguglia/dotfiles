@@ -118,4 +118,4 @@ fi
 
 # Stuff for R
 alias R='R --vanilla'
-alias FAPdoc='cd ~/Dropbox/Victor-FAPESP/Documentos/Docs_2018-05_2019-04'
+alias rpkgc='Rscript -e "Rcpp::compileAttributes(); devtools::document()" && R CMD INSTALL --no-multiarch --with-keep.source .'
