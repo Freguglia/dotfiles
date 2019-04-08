@@ -9,6 +9,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jalvesaq/Nvim-R'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'vim-pandoc/vim-rmarkdown'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax' 
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -54,3 +57,7 @@ set clipboard=unnamedplus
 
 "use mouse
 set mouse=a
+
+set spell spelllang=en_us
+
+
