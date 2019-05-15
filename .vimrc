@@ -60,4 +60,6 @@ set mouse=a
 
 set spell spelllang=en_us
 
+hi Folded ctermbg=238
+
 
