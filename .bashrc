@@ -82,6 +82,9 @@ fi
 # Stuff for R
 alias R='R --vanilla'
 alias rpkgc='Rscript -e "Rcpp::compileAttributes(); devtools::document()" && R CMD INSTALL --no-multiarch --with-keep.source .'
+function knit { Rscript -e "rmarkdown::render('$1')"; }
+export -f knit
+complete -f -X '!*.Rmd' knit
 
 # latex stuff
 function btex { latexmk -pdf -pvc "$1" && latexmk -c; }
