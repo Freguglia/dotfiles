@@ -26,3 +26,6 @@ set clipboard=unnamedplus
 
 "use mouse
 set mouse=a
+
+" Knit with <F3>
+map <F3> :! knit %
