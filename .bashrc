@@ -87,6 +87,6 @@ export -f knit
 complete -f -X '!*.Rmd' knit
 
 # latex stuff
-function btex { latexmk -pdf -pvc "$1" && latexmk -c; }
+function btex { latexmk -pdf "$1" && latexmk -c; }
 export -f btex
 complete -f -X '!*.tex' btex
