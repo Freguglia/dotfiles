@@ -81,7 +81,10 @@ fi
 
 # Stuff for R
 alias R='R --vanilla'
-alias rpkgc='Rscript -e "Rcpp::compileAttributes(); devtools::document()" && R CMD INSTALL --no-multiarch --with-keep.source .'
+
+function rpkgc { Rscript -e "Rcpp::compileAttributes('$1');
+  devtools::document('$1')" && R CMD INSTALL $1 --no-multiarch --with-keep.source; }
+
 function knit { Rscript -e "rmarkdown::render('$1')"; }
 export -f knit
 complete -f -X '!*.Rmd' knit

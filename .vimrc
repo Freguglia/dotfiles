@@ -29,8 +29,12 @@ set clipboard=unnamedplus
 set mouse=a
 
 " Knit with <F3>
-map <F3> :! knit %
+autocmd FileType rmd nnoremap <F3> :! knit %
+autocmd FileType tex nnoremap <F3> :! btex %
 
 " highlight column 80
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v./
+
+" fix weird identation
+let r_indent_align_args = 0
