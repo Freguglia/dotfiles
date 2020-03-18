@@ -38,3 +38,6 @@ match OverLength /\%81v./
 
 " fix weird identation
 let r_indent_align_args = 0
+
+" prevent conceal
+let g:pandoc#syntax#conceal#use = 0
