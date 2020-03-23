@@ -20,7 +20,6 @@ set number
 set relativenumber
 set hlsearch
 set ruler
-highlight Comment ctermfg=green
 
 "copy/paste across multiple sessions
 set clipboard=unnamedplus
@@ -40,4 +39,66 @@ match OverLength /\%81v./
 let r_indent_align_args = 0
 
 " prevent conceal
-let g:pandoc#syntax#conceal#use = 0
+let g:pandoc#syntax#conceal#use = 0 
+
+map <F4> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+hi Comment ctermfg=243
+hi Constant ctermfg=83
+hi LineNr ctermfg=243
+hi CursorLineNr term=underline ctermfg=0 ctermbg=15
+hi Statement ctermfg=141
+hi SpellBad ctermfg=1 ctermbg=0
+hi PreProc ctermfg=176
+hi Type ctermfg=214
+hi pandocCiteKey ctermfg=227
+hi link pandocCiteAnchor pandocCiteKey
+hi link pandocCiteLocator pandocCiteKey
+hi link pandocPCite pandocCiteKey
+hi pandocListItemBulletId cterm=bold ctermfg=215
+hi Title cterm=bold ctermfg=15 ctermbg=124
+hi pandocAtxStart ctermfg=15 ctermbg=0
+hi yamlBlockMappingKey ctermfg=214 cterm=bold
+hi link yamlKeyValueDelimiter yamlBlockMappingKey
+hi link yamlDocumentStart yamlBlockMappingKey
+hi link yamlBlockCollectionItemStart yamlBlockMappingKey
+hi link yamlFlowIndicator yamlBlockMappingKey
+hi link yamlFlowStringDelimiter yamlBlockMappingKey
+hi yamlPlainScalar ctermfg=255
+hi link yamlFlowString yamlPlainScalar
+hi link yamlEscape yamlPlainScalar
+hi link rBoolean Boolean
+hi link yamlBool Boolean
+hi link texMathZoneX Statement
+hi link texMathZoneC Statement
+hi link texTypeStyle Statement
+hi link Delimiter Statement
+hi texMathMatcher ctermfg=141
+hi texRefZone ctermfg=227
+hi texItalBoldStyle ctermfg=141
+hi link texSpecialChar Statement
+hi link texInputFileOpt Statement
+hi link texInputFile Constant
+hi pandocLaTeXRegion ctermfg=15
+hi link pandocNoFormatted Statement
+hi texBeginEndName ctermfg=141 cterm=bold
+hi texStatement ctermfg=141
+hi link texBeginEnd texStatement
+hi pandocDelimitedCodeBlockLanguage ctermfg=35
+hi link pandocDelimitedCodeBlockStart pandocDelimitedCodeBlockLanguage
+hi link pandocDelimitedCodeBlockEnd pandocDelimitedCodeBlockLanguage
+hi rFunction ctermfg=214
+hi rNameWSpace ctermfg=35
+hi rPreProc ctermfg=35
+hi link rDollar Delimiter
+hi rOTitle ctermfg=141 cterm=bold
+hi link rOTag rOTitle
+hi rOCommentKey ctermfg=230
+hi link rOBlock rOCommentKey
+hi link rOExamples rOCommentKey
+hi link rString Constant
+hi link rSpecial rString
+hi Folded cterm=underline ctermfg=8 ctermbg=52
+hi FoldColumn ctermfg=8 ctermbg=52
