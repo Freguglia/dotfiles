@@ -54,12 +54,12 @@ hi SpellBad ctermfg=1 ctermbg=0
 hi PreProc ctermfg=176
 hi Type ctermfg=214
 hi pandocCiteKey ctermfg=227
-hi link pandocCiteAnchor pandocCiteKey
+hi pandocCiteAnchor ctermfg=227
 hi link pandocCiteLocator pandocCiteKey
 hi link pandocPCite pandocCiteKey
 hi pandocListItemBulletId cterm=bold ctermfg=215
-hi Title cterm=bold ctermfg=15 ctermbg=124
-hi pandocAtxStart ctermfg=15 ctermbg=0
+hi Title cterm=bold ctermfg=15 ctermbg=241
+hi pandocAtxStart ctermfg=0 ctermbg=15
 hi yamlBlockMappingKey ctermfg=214 cterm=bold
 hi link yamlKeyValueDelimiter yamlBlockMappingKey
 hi link yamlDocumentStart yamlBlockMappingKey
@@ -100,5 +100,5 @@ hi link rOBlock rOCommentKey
 hi link rOExamples rOCommentKey
 hi link rString Constant
 hi link rSpecial rString
-hi Folded cterm=underline ctermfg=8 ctermbg=52
-hi FoldColumn ctermfg=8 ctermbg=52
+hi Folded cterm=underline ctermfg=244 ctermbg=235
+hi FoldColumn ctermfg=239 ctermbg=16
