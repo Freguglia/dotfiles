@@ -31,8 +31,8 @@ set mouse=a
 autocmd FileType rmd nnoremap <F3> :! knit %
 autocmd FileType tex nnoremap <F3> :! btex %
 
-" insert R chunk with Ctrl-Shift-I
-autocmd FileType rmd nnoremap <C-S-I> i```{r}<ESC>o<ESC>o```<ESC>ki
+"R devel
+autocmd FileType r,cpp nnoremap <C-B> :! rpkgc %:h
 
 " highlight column 80
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
@@ -43,10 +43,6 @@ let r_indent_align_args = 0
 
 " prevent conceal
 let g:pandoc#syntax#conceal#use = 0 
-
-map <F4> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-      \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-      \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 hi Comment ctermfg=243
 hi Constant ctermfg=83

@@ -82,10 +82,17 @@ fi
 # Stuff for R
 alias R='R --vanilla'
 
-function rpkgc { Rscript -e "Rcpp::compileAttributes('$1');
-  devtools::document('$1')" && R CMD INSTALL $1 --no-multiarch --with-keep.source; }
+function rpkgc { 
+  if [ -e $1/DESCRIPTION ]; then
+    Rscript -e "Rcpp::compileAttributes('$1'); devtools::document('$1')" && R CMD INSTALL $1 --no-multiarch --with-keep.source
+  else
+    Rscript -e "Rcpp::compileAttributes('$1/..'); devtools::document('$1/..')" && R CMD INSTALL $1/.. --no-multiarch --with-keep.source
+  fi
+}
+export -f rpkgc
 
 function rtest { Rscript -e "devtools::test('$1')"; }
+export -f rtest
 
 function knit { Rscript -e "rmarkdown::render('$1')"; }
 export -f knit
