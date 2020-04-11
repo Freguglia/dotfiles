@@ -31,6 +31,9 @@ set mouse=a
 autocmd FileType rmd nnoremap <F3> :! knit %
 autocmd FileType tex nnoremap <F3> :! btex %
 
+" insert R chunk with Ctrl-Shift-I
+autocmd FileType rmd nnoremap <C-S-I> i```{r}<ESC>o<ESC>o```<ESC>ki
+
 " highlight column 80
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v./
