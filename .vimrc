@@ -8,6 +8,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-pandoc/vim-rmarkdown'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'jalvesaq/Nvim-R'
 call vundle#end()
 filetype plugin indent on
 
