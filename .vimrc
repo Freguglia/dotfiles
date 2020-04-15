@@ -32,6 +32,13 @@ set mouse=a
 autocmd FileType rmd nnoremap <F3> :! knit %
 autocmd FileType tex nnoremap <F3> :! btex %
 
+
+" insert R chunk with Ctrl-Shift-I
+autocmd FileType rmd nnoremap <C-S-I> i```{r}<ESC>o<ESC>o```<ESC>ki
+let R_assign = 0
+let R_rnowebchunk = 0
+let R_rmdchunk = 0
+
 "R devel
 autocmd FileType r,cpp nnoremap <C-B> :! rpkgc %:h
 
