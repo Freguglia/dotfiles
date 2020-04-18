@@ -9,6 +9,7 @@ Plugin 'vim-pandoc/vim-rmarkdown'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'jalvesaq/Nvim-R'
+Plugin 'preservim/nerdtree'
 call vundle#end()
 filetype plugin indent on
 
