@@ -102,3 +102,7 @@ complete -f -X '!*.Rmd' knit
 function btex { latexmk -pdf "$1" && latexmk -c; }
 export -f btex
 complete -f -X '!*.tex' btex
+
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
