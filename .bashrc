@@ -103,8 +103,16 @@ function btex { latexmk -pdf "$1" && latexmk -c; }
 export -f btex
 complete -f -X '!*.tex' btex
 
+function mtex { latexmk -pdf -pvc "$1"; }
+export -f mtex
+complete -f -X '!*.tex' mtex
+
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
+
+# vim ignores latex auxiliary files
+shopt -s extglob
+complete -f -X '*.@(lot|pdf|aux|bbl|blg|fls|idx|ilg|ind|loa|lof|lot|toc|log|fdb_latexmk|o)' vim
 
 alias pip=pip3
