@@ -10,7 +10,8 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'jalvesaq/Nvim-R'
 Plugin 'preservim/nerdtree'
-Plugin 'LaTeX-Box-Team/LaTeX-Box'
+Plugin 'lervag/vimtex' 
+Plugin 'ycm-core/YouCompleteMe' 
 Plugin 'tomasiser/vim-code-dark'
 call vundle#end()
 filetype plugin indent on
