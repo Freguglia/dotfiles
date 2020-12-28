@@ -46,7 +46,7 @@ let R_rnowebchunk = 0
 let R_rmdchunk = 0
 
 "R devel
-autocmd FileType r,cpp nnoremap <C-B> :! rpkgc %:h
+autocmd FileType r,cpp nnoremap <C-B> :! rpkgc %:p:h
 
 let g:tex_flavor = 'latex'
 
