@@ -47,11 +47,13 @@ let R_rmdchunk = 0
 
 "R devel
 autocmd FileType r,cpp nnoremap <C-B> :! rpkgc %:p:h
+command! RReload execute printf(":RSend detach('package:%s', unload = TRUE); library(%s)", fnamemodify(getcwd(), ':t'), fnamemodify(getcwd(), ':t'))
+
 
 let g:tex_flavor = 'latex'
 
 " fix weird identation
-let r_indent_align_args = 0
+let r_indent_align_args = 1
 
 " prevent conceal
 let g:pandoc#syntax#conceal#use = 0 
