@@ -47,7 +47,8 @@ let R_rmdchunk = 0
 
 "R devel
 autocmd FileType r,cpp nnoremap <C-B> :! rpkgc %:p:h
-command! RReload execute printf(":RSend detach('package:%s', unload = TRUE); library(%s)", fnamemodify(getcwd(), ':t'), fnamemodify(getcwd(), ':t'))
+command! RReload execute printf(":RSend devtools::reload('.')")
+
 
 
 let g:tex_flavor = 'latex'

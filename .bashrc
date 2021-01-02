@@ -94,6 +94,9 @@ export -f rpkgc
 function rtest { Rscript -e "devtools::test('$1')"; }
 export -f rtest
 
+function rcheck { Rscript -e "rcmdcheck::rcmdcheck('$1', args = '--as-cran')"; }
+export -f rcheck
+
 function knit { Rscript -e "rmarkdown::render('$1')"; }
 export -f knit
 complete -f -X '!*.Rmd' knit
