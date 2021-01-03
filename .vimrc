@@ -17,8 +17,8 @@ call vundle#end()
 filetype plugin indent on
 
 syntax on
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set ai
 set number
@@ -46,9 +46,7 @@ let R_rnowebchunk = 0
 let R_rmdchunk = 0
 
 "R devel
-autocmd FileType r,cpp nnoremap <C-B> :! rpkgc %:p:h
-command! RReload execute printf(":RSend devtools::reload('.')")
-
+autocmd FileType r,cpp nnoremap <C-B> :RSend devtools::document();devtools::install('.');devtools::reload('.')
 
 
 let g:tex_flavor = 'latex'
