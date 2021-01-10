@@ -13,6 +13,7 @@ Plugin 'preservim/nerdtree'
 Plugin 'lervag/vimtex' 
 Plugin 'ycm-core/YouCompleteMe' 
 Plugin 'tomasiser/vim-code-dark'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 filetype plugin indent on
 
@@ -46,7 +47,7 @@ let R_rnowebchunk = 0
 let R_rmdchunk = 0
 
 "R devel
-autocmd FileType r,cpp nnoremap <C-B> :RSend devtools::document();devtools::install('.');devtools::reload('.')
+autocmd FileType r,cpp nnoremap <C-B> :RSend devtools::document();devtools::install('.', quick = TRUE)
 
 
 let g:tex_flavor = 'latex'
