@@ -14,6 +14,8 @@ Plugin 'lervag/vimtex'
 Plugin 'ycm-core/YouCompleteMe' 
 Plugin 'tomasiser/vim-code-dark'
 Plugin 'tpope/vim-fugitive'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 call vundle#end()
 filetype plugin indent on
 
@@ -28,6 +30,11 @@ set hlsearch
 set ruler
 
 colorscheme codedark
+
+let g:UltiSnipsExpandTrigger="<c-space>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:ycm_key_list_stop_completion = ['<C-y>', '<CR>']
 
 "copy/paste across multiple sessions
 set clipboard=unnamedplus
