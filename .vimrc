@@ -10,6 +10,8 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'jalvesaq/Nvim-R'
 Plugin 'jalvesaq/R-Vim-runtime'
+Plugin 'lervag/vimtex'
+Plugin 'Konfekt/FastFold'
 
 " Completion
 Plugin 'neoclide/coc.nvim'
@@ -33,16 +35,29 @@ set number
 set relativenumber
 set hlsearch
 set ruler
+set foldenable
 
-colorscheme codedark
+let g:fastfold_savehook = 1
+let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
+
+let g:tex_fold_enabled = 0
+
+let g:tex_flavor = "latex"
+let g:tex_conceal = ''
+
+let g:vimtex_fold_enabled = 1
+let g:vimtex_fold_types = {
+	\ 'envs' : {
+	\	'whitelist': ['enumerate','itemize','math'],
+	\ },
+\ }
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-nmap <leader>ne :NERDTreeToggle<cr>
 
 " Use <tab> for jump to next placeholder, it's default of coc.nvim
 let g:coc_snippet_next = '<tab>'
