@@ -36,6 +36,8 @@ set relativenumber
 set hlsearch
 set ruler
 set foldenable
+set ignorecase
+set smartcase
 
 let g:fastfold_savehook = 1
 let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
@@ -49,7 +51,7 @@ let g:tex_conceal = ''
 let g:vimtex_fold_enabled = 1
 let g:vimtex_fold_types = {
 	\ 'envs' : {
-	\	'whitelist': ['enumerate','itemize','math'],
+	\	'whitelist': ['enumerate','itemize','math', 'abstract'],
 	\ },
 \ }
 
