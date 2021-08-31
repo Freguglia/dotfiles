@@ -119,4 +119,5 @@ shopt -s extglob
 complete -f -X '*.@(lot|pdf|aux|bbl|blg|fls|idx|ilg|ind|loa|lof|lot|toc|log|fdb_latexmk|o)' vim
 
 alias pip=pip3
+export R_PROGRESSR_ENABLE=TRUE
 alias pullall='for i in */.git; do ( echo $i; cd $i/..; git pull; ); done'
