@@ -14,6 +14,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim'
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 filetype plugin indent on
 
@@ -38,6 +39,13 @@ let g:tex_fold_enabled = 0
 
 let g:tex_flavor = "latex"
 let g:tex_conceal = ''
+
+if strftime("%H") < 18
+  set background=light
+else
+  set background=dark
+endif
+colorscheme PaperColor
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
