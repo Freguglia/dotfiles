@@ -39,6 +39,7 @@ let g:tex_fold_enabled = 0
 
 let g:tex_flavor = "latex"
 let g:tex_conceal = ''
+let g:airline_powerline_fonts = 1
 
 if strftime("%H") < 18
   set background=light

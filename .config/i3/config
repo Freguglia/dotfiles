@@ -116,3 +116,5 @@ exec --no-startup-id feh --bg-fill --bg-scale ~/Pictures/wallpaper.jpg
 for_window [class="R_x11"] floating enable
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id autorandr --change
+exec_always --no-startup-id xautolock -detectsleep -time 15 -locker 'i3lock; xset dpms force off'
+bindsym $mod+b exec "i3lock; xset dpms force off"

@@ -43,7 +43,7 @@ cursor-scroll = ns-resize
 
 enable-ipc = true
 
-tray-position = right
+tray-position = left
 
 ; wm-restack = generic
 ; wm-restack = bspwm
@@ -96,7 +96,7 @@ label = %percentage_used:2%%
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "  "
+format-prefix = "CPU "
 format-prefix-foreground = ${colors.primary}
 label = %percentage:2%%
 
@@ -139,6 +139,7 @@ full-at = 99
 battery = BAT0
 adapter = ADP1
 poll-interval = 5
+format-full = <ramp-capacity> <label-full>
 format-charging = <animation-charging>  <label-charging>
 animation-charging-0 = 
 animation-charging-1 = 
