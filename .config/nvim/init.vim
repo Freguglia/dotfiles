@@ -62,6 +62,13 @@ let g:vimtex_fold_types = {
 	\ },
 \ }
 
+let g:vimtex_quickfix_ignore_filters = [
+      \ 'Underfull',
+      \ 'Overfull',
+      \ 'Token',
+      \ 'Foreign command'
+      \]
+
 set clipboard=unnamedplus
 set mouse=a
 
