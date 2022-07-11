@@ -66,7 +66,10 @@ let g:vimtex_quickfix_ignore_filters = [
       \ 'Underfull',
       \ 'Overfull',
       \ 'Token',
-      \ 'Foreign command'
+      \ 'Foreign command',
+      \ 'using breakurl while processing',
+      \ 'bookmark levels',
+      \ 'substituted on input line'
       \]
 
 set clipboard=unnamedplus
