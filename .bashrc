@@ -120,4 +120,7 @@ complete -f -X '*.@(lot|pdf|aux|bbl|blg|fls|idx|ilg|ind|loa|lof|lot|toc|log|fdb_
 
 alias pip=pip3
 export R_PROGRESSR_ENABLE=TRUE
-alias pullall='for i in */.git; do ( echo $i; cd $i/..; git pull; ); done'
+
+function uncommentex { perl -pe 's/(?<!\\)%.*$//g' $1 | sed -e '/^$/N;/^\n$/D'; }
+export -f uncommentex
+complete -f -X '!*.tex' uncommentex
