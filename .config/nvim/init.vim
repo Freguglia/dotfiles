@@ -14,7 +14,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim'
-Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 filetype plugin indent on
 
@@ -41,17 +40,10 @@ let g:tex_flavor = "latex"
 let g:tex_conceal = ''
 let g:airline_powerline_fonts = 1
 
-if strftime("%H") < 18
-  set background=light
-else
-  set background=dark
-endif
-colorscheme PaperColor
+inoremap <expr> <Tab> coc#pum#visible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? "\<C-p>" : "\<S-Tab>"
 
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 
