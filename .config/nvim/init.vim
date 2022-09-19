@@ -67,6 +67,9 @@ let g:vimtex_quickfix_ignore_filters = [
 set clipboard=unnamedplus
 set mouse=a
 
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+
 autocmd FileType rmd nnoremap <F3> :! knit %
 autocmd FileType tex nnoremap <F3> :! btex %
 
@@ -75,4 +78,4 @@ let R_assign = 0
 let R_rmdchunk = 0
 autocmd FileType r,cpp nnoremap <C-B> :RSend devtools::document();devtools::install('.', quick = TRUE)
 let r_indent_align_args = 1
-let g:pandoc#syntax#conceal#use = 0 
+let g:pandoc#syntax#conceal#use = 0
