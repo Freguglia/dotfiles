@@ -9,6 +9,7 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'jalvesaq/Nvim-R'
 Plug 'lervag/vimtex'
+Plug 'jacoborus/tender.vim'
 call plug#end()
 filetype plugin indent on
 
@@ -26,6 +27,12 @@ set ignorecase
 set smartcase
 "set clipboard=unnamed,unnamedplus
 set mouse=a
+
+if (has("termguicolors"))
+ set termguicolors
+endif
+syntax enable
+colorscheme tender
 
 let g:tex_fold_enabled = 0
 
