@@ -6,6 +6,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-omni'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'jalvesaq/Nvim-R'
 Plug 'lervag/vimtex'
@@ -90,11 +91,24 @@ lua <<EOF
       documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
-      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<Tab>'] = function(fallback)
+        if cmp.visible() then
+          cmp.select_next_item()
+        else
+          fallback()
+        end
+      end,
+      ['<S-Tab>'] = function(fallback)
+        if cmp.visible() then
+          cmp.select_prev_item()
+        else
+          fallback()
+        end
+      end,
+      ['<Esc>'] = cmp.mapping.close(),
+      ['<C-d>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
-      ['<C-o>'] = cmp.mapping.complete(),
-      ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<C-Space>'] = cmp.mapping.complete(),
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
@@ -102,7 +116,7 @@ lua <<EOF
       -- { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
-    }, {
+      { name = 'omni', keyword_length = 0 },
       { name = 'buffer' },
     })
   })
